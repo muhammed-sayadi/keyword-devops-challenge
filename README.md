@@ -14,10 +14,12 @@ Example API Request:
 
 REQUEST GET ```http://<ip_here>:8080/estimate?keyword=linux```
 RESPONSE
-```{
+```
+{
 	“keyword”:”linux”,
 	“score”:80
-}```
+}
+```
 
 ## The Challenge - part 1
 
