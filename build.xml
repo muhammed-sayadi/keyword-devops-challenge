@@ -1,0 +1,50 @@
+<project basedir="." default="dist" name="Keywords">
+    <description>builds the jar</description>
+    <!-- set global properties for this build -->
+    <property location="src" name="src.java"/>
+    <property location="build" name="build"/>
+    <property location="dist" name="dist"/>
+    <property location="conf" name="conf"/>
+    <property location="lib" name="lib"/>
+    <path id="jar.classpath">
+        <pathelement location="lib"/>
+        <fileset dir="${lib}">
+            <include name="**/*.jar"/>
+        </fileset>
+    </path>
+    <target depends="clean" name="init">
+        <tstamp/>
+        <!-- Create the build directory structure used by compile -->
+        <mkdir dir="${build}"/>
+    </target>
+    <target depends="init" description="compile the source " name="compile">
+        <!-- Compile the java code from ${src} into ${build} -->
+        <javac debug="true" destdir="${build}" includeantruntime="false" srcdir="${src.java}">
+            <classpath refid="jar.classpath"/>
+        </javac>
+    </target>
+    <target depends="compile" description="generate the distribution" name="dist">
+        <!-- Create the distribution directory -->
+        <mkdir dir="${dist}/"/>
+        <!-- Put everything in ${build} into the jar file -->
+        <jar basedir="${build}" jarfile="${dist}/amazon-keyword-estimate.jar"/>
+        <!-- Create lib directory and copy helper libs-->
+        <mkdir dir="${dist}/lib"/>
+        <copy todir="${dist}/lib">
+            <fileset dir="${lib}">
+                <include name="**/*.jar"/>
+            </fileset>
+        </copy>
+        <!-- Create Conf directory and copy contents -->
+        <mkdir dir="${dist}/conf"/>
+        <copy todir="${dist}/conf">
+            <fileset dir="${conf}"/>
+        </copy>
+        <!-- Update current to release -->
+    </target>
+    <target description="clean up" name="clean">
+        <!-- Delete the ${build} and ${dist} directory trees -->
+        <delete dir="${build}"/>
+        <delete dir="${dist}"/>
+    </target>
+</project>
