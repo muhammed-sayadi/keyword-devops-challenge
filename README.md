@@ -13,6 +13,7 @@ The service uses Java 8.
 Example API Request:
 
 REQUEST GET ```http://<ip_here>:8080/estimate?keyword=linux```
+
 RESPONSE
 ```
 {
@@ -31,13 +32,14 @@ You have been provided with an incomplete Dockerfile that creates the image and 
 
 Additionally, fill out the functions docker_build() and docker_run() as per the below requirements so as to build & run the application on a local Docker installation.
 
+```
 ./service.sh           : prints usage
 ./service.sh dev_build : builds your app
 ./service.sh dev_run   : runs your app
 
 ./service.sh docker_build : packages your app into a docker image
 ./service.sh docker_run   : runs your app using a docker image
-
+```
 
 ## The Challenge - part 2
 
