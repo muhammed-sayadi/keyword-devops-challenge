@@ -47,10 +47,10 @@ Additionally, fill out the functions docker_build() and docker_run() as per the 
 You have been provided an AWS sandbox environment with credentials provided in the CSV file shared with you. The user has no permissions, please let us know the minimum viable permissions required (preferably as JSON) in order to complete the following tasks -
 
 
-Configure security groups
-Expose only port 8080
-Set up two servers using Docker swarm/Kubernetes or any tool of your choice
-Load balance the two servers having the same address using ELB
+- Configure security groups 
+- Expose only port 8080 
+- Set up two servers using Docker swarm/Kubernetes or any tool of your choice 
+- Load balance the two servers having the same address using ELB
 
 
 Having done that, execute the tasks! :)
