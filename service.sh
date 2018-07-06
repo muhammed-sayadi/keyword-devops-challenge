@@ -12,12 +12,12 @@ dev_run() {
 
 docker_build() {
   # Your implementation here
-  true
+  docker build -t amazon-keyword-estimate-img .
 }
 
 docker_run() {
   # Your implementation here
-  true
+  docker run --name amazon-keyword-estimate-img -p 8080:8080 amazon-keyword-estimate
 }
 
 usage() {

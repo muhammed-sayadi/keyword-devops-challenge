@@ -5,3 +5,6 @@ RUN apt-get -qq -y update && \
     rm -rf /var/cache/apt /var/lib/apt/lists/*
 
 # Your deployment script here
+COPY . /
+RUN /usr/share/ant/bin/ant
+ENTRYPOINT java -cp dist/amazon-keyword-estimate.jar:dist/lib/*:dist/conf com.keyword.KeywordMain $*
