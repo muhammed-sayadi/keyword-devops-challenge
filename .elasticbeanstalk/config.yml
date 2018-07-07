@@ -1,6 +1,6 @@
 global:
   application_name: Amazon-Keyword-Estimate
-  default_platform: 64bit Amazon Linux 2017.09 v2.8.4 running Docker 17.09.1-ce
+  default_platform: Multi-container Docker running on 64bit Amazon Linux/2.11.0
   default_region: us-east-1
   environment: amazon-keyword-estimate
   ec2_keyname: amazon-keyword-estimate
