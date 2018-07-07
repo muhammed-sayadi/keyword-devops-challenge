@@ -13,7 +13,7 @@
       "name": "amazon-keyword-estimate",
       "image": "436623151146.dkr.ecr.us-east-1.amazonaws.com/amazon-keyword-estimate:latest",
       "essential": true,
-      "memory": 2048,
+      "memory": 512,
       "mountPoints": [
         {
           "sourceVolume": "amazon-keyword-estimate-volume",
