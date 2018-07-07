@@ -12,6 +12,7 @@ unzip awscli-bundle.zip
 docker_login=$(~/bin/aws ecr get-login --no-include-email)
 ECR_REGISTRY=`echo $docker_login | sed 's|.*https://||'`
 eval "$docker_login"
+docker images
 docker tag $DOCKER_IMAGE_NAME:latest $ECR_REGISTRY/$DOCKER_IMAGE_NAME:latest
 docker tag $DOCKER_IMAGE_NAME:latest $ECR_REGISTRY/$DOCKER_IMAGE_NAME:$TAG
 docker push $ECR_REGISTRY/$DOCKER_IMAGE_NAME:latest
