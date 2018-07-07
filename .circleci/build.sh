@@ -2,7 +2,7 @@
 
 TAG=$CIRCLE_BUILD_NUM
 APP_NAME=amazon-keyword-estimate
-DOCKER_IMAGE_NAME=$APP_NAME-$CIRCLE_BRANCH
+DOCKER_IMAGE_NAME=$APP_NAME
 ant -buildfile /home/circleci/repo/build.xml
 cp /home/circleci/repo/dist/$APP_NAME.jar .
 docker build -t $DOCKER_IMAGE_NAME .
