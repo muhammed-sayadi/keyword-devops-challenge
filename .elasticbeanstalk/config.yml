@@ -1,7 +1,7 @@
 global:
   application_name: Amazon-Keyword-Estimate
   default_platform: Multi-container Docker running on 64bit Amazon Linux/2.11.0
-  default_region: us-east-1
+  default_region: us-east-2
   environment: amazon-keyword-estimate
   ec2_keyname: amazon-keyword-estimate
   sc: git
