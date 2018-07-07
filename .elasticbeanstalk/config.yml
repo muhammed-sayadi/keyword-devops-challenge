@@ -1,6 +1,6 @@
 branch-defaults:
   p2_solution:
-    environment: amazon-keyword-estimate
+    environment: amazon-keyword-estimate-1
     ec2_keyname: amazon-keyword-estimate
 
 global:
