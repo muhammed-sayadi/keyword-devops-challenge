@@ -1,0 +1,4 @@
+{
+  "cloudFormationTemplate": "Not a valid Cloud Formation template. This is just a placeholder.",
+  "comment": "Provisioning resources through CF would go too far out of the scope of this challenge."
+}

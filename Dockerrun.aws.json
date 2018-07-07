@@ -1,0 +1,32 @@
+{
+  "AWSEBDockerrunVersion": 2,
+  "volumes": [
+    {
+      "name": "amazon-keyword-estimate-volume",
+      "host": {
+        "sourcePath": "/var/app/current/amazon-keyword-estimate"
+      }
+    }
+  ],
+  "containerDefinitions": [
+    {
+      "name": "amazon-keyword-estimate",
+      "image": "436623151146.dkr.ecr.us-east-1.amazonaws.com/amazon-keyword-estimate:latest",
+      "essential": true,
+      "memory": 2048,
+      "mountPoints": [
+        {
+          "sourceVolume": "amazon-keyword-estimate-volume",
+          "containerPath": "/var/www/html",
+          "readOnly": true
+        }
+      ],
+      "portMappings": [
+        {
+          "hostPort": 80,
+          "containerPort": 8080
+        }
+      ]
+    }
+  ]
+}

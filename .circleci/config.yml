@@ -1,0 +1,41 @@
+# Java Maven CircleCI 2.0 configuration file
+#
+# Check https://circleci.com/docs/2.0/language-java/ for more details
+#
+version: 2
+general:
+  branches:
+    only:
+      - p2_solution
+jobs:
+  build:
+    docker:
+      - image: circleci/openjdk:8-jdk
+
+    working_directory: ~/repo
+
+    steps:
+      - checkout
+      - setup_remote_docker
+
+      - run:
+          name: Check and provision AWS resources
+          command: |
+            cd .circleci
+            chmod +x provision.sh
+            ./provision.sh
+
+      - run:
+          name: Build and publish Docker image
+          command: |
+            cd .circleci
+            chmod +x build.sh
+            ./build.sh
+
+
+      - run:
+          name: Deploy Docker container to EB
+          command: |
+            cd .circleci
+            chmod +x deploy.sh
+            ./deploy.sh
