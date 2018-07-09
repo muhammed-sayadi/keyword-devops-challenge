@@ -5,6 +5,6 @@ branch-defaults:
 
 global:
   application_name: Amazon-Keyword-Estimate
-  default_platform: 64bit Amazon Linux 2018.03 v2.10.0 running Multi-container Docker 17.12.1-ce (Generic)
+  default_platform: 64bit Amazon Linux 2017.09 v2.8.4 running Docker 17.09.1-ce
   default_region: us-west-2
   sc: git
