@@ -11,7 +11,7 @@
   "containerDefinitions": [
     {
       "name": "amazon-keyword-estimate",
-      "image": "179204788661.dkr.ecr.us-east-2.amazonaws.com/amazon-keyword-estimate:latest",
+      "image": "835849412574.dkr.ecr.us-west-2.amazonaws.com/amazon-keyword-estimate:latest",
       "essential": true,
       "memory": 512,
       "mountPoints": [
