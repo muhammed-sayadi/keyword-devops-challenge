@@ -3,8 +3,6 @@
 TAG=$CIRCLE_BUILD_NUM
 APP_NAME=amazon-keyword-estimate
 DOCKER_IMAGE_NAME=$APP_NAME
-ant -buildfile /home/circleci/repo/
-cp /home/circleci/repo/dist/$APP_NAME.jar .
 docker build -t $DOCKER_IMAGE_NAME /home/circleci/repo/
 curl "https://s3.amazonaws.com/aws-cli/awscli-bundle.zip" -o "awscli-bundle.zip"
 unzip awscli-bundle.zip
